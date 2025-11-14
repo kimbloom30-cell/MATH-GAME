@@ -45,6 +45,11 @@ button.option {
     cursor: pointer;
 }
 
+button:disable {
+    opacity: 0.5;
+    cursor not-allowed;
+}
+
 button.option:hover {
     background: #2980b9;
     transform: scale(1.05);
