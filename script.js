@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 const questionEl = document.getElementById("question");
 const feedbackEl = document.getElementById("feedback");
 const scoreEl = document.getElementById("score");
@@ -69,3 +70,4 @@ document.getElementById("startBtn").onclick = () => {
     scoreEl.textContent = score;
     generateQuestion();
 };
+});
