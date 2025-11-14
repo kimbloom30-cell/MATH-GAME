@@ -1,5 +1,3 @@
-// script.js
-
 const questionEl = document.getElementById("question");
 const feedbackEl = document.getElementById("feedback");
 const scoreEl = document.getElementById("score");
@@ -35,10 +33,15 @@ function generateOptions(correct) {
     let answers = [correct];
 
     while (answers.length < 4) {
-        let wrong = correct + Math.floor(Math.random() * 10) - 5;
-        if (!answers.includes(wrong)) answers.push(wrong);
+        let deviation = Math.floor(Math.random() * 10) + 1; // 1–10
+        let wrong = Math.random() < 0.5 ? correct + deviation : correct - deviation;
+
+        if (wrong > 0 && !answers.includes(wrong)) {
+            answers.push(wrong);
+        }
     }
 
+    // Shuffle answers
     answers.sort(() => Math.random() - 0.5);
 
     options.forEach((btn, i) => {
